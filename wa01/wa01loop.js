@@ -11,7 +11,6 @@ for (var i = 1; i <= 10; i ++)
     
     var inFile = "https://parsons.nyc/aa/" + filenum + ".html"
     var outFile = "/home/ec2-user/environment/AAMeetings/" + filenum + ".text"
-    console.log(outFile)
     
     request(inFile, function(error, response, body){
     if (!error && response.statusCode == 200) {
