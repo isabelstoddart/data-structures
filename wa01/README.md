@@ -2,7 +2,7 @@ Code for weekly assignment 1 for data structures taken at Parsons School of Desi
 
 This code reads in provided urls and prints them out into text files. 
 
-For this assignment, I started by following the instruction videos and using the sample code, included below, to take in each url and print them out into a text file:
+For this assignment, I started by using this sample code, included below, to take in each url and print them out into a text file:
 
     var request = require('request');
     var fs = require('fs');
@@ -25,3 +25,5 @@ I think the issue is that the computer isn't reading in the files fast enough. I
 In the end, I just copied and pasted the sample code 10 times, substituting the correct urls and output files for each. I have also included the for loop I wrote, even though it has errors.
 
 Overall, I thought this assignment was straight forward and the videos were helpful and easy to follow.
+
+**edit** After learning about javascript let, I incorporated let in my loop and it worked. Using let instead of var while declaring the iteration variable allows for the loop to go through all iterations seperately instead of all at once. Let gives the program order. This allows each file to be printed seperately and in order of the iteration, instead of all the urls printing out to the last text file. 
