@@ -26,4 +26,4 @@ In the end, I just copied and pasted the sample code 10 times, substituting the 
 
 Overall, I thought this assignment was straight forward and the videos were helpful and easy to follow.
 
-**edit** After learning about javascript let, I incorporated let in my loop and it worked. Using let instead of var while declaring the iteration variable allows for the loop to go through all iterations seperately instead of all at once. Let gives the program order. This allows each file to be printed seperately and in order of the iteration, instead of all the urls printing out to the last text file. 
+**Edit** After learning about javascript let, I incorporated let in my loop and it worked. Using let instead of var while declaring the iteration variable allows for the loop to go through all iterations seperately instead of all at once. Let gives the program order. This allows each file to be printed seperately and in order of the iteration, instead of all the urls printing out to the last text file. 
