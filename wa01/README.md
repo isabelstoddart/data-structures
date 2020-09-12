@@ -1,4 +1,4 @@
-Code for weekly assignment 1 for data structures taken at Parsons School of Design. 
+**Code for weekly assignment 1 for data structures taken at Parsons School of Design** 
 
 This code reads in provided urls and prints them out into text files. 
 
