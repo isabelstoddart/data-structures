@@ -1,4 +1,4 @@
-**Code for weekly assignment 1 for data structures taken at Parsons School of Design.**
+**Code for weekly assignment 1 for data structures taken at Parsons School of Design**
 
 I started this assignment by following the starter code, included below, and applying it to the html file I was scraping.
 
