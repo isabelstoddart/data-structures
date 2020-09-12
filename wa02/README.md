@@ -1,4 +1,32 @@
-I started this assignment by following the starter code,  and applying it to the html file I was scraping.
+Code for weekly assignment 1 for data structures taken at Parsons School of Design.
+
+I started this assignment by following the starter code, included below, and applying it to the html file I was scraping.
+
+  // npm install cheerio
+
+  var fs = require('fs');
+  var cheerio = require('cheerio');
+
+  // load the thesis text file into a variable, `content`
+  // this is the file that we created in the starter code from last week
+  var content = fs.readFileSync('data/thesis.txt');
+
+  // load `content` into a cheerio object
+  var $ = cheerio.load(content);
+
+  // print (to the console) names of thesis students
+  $('h3').each(function(i, elem) {
+      console.log($(elem).text());
+  });
+
+  // write the project titles to a text file
+  var thesisTitles = ''; // this variable will hold the lines of text
+
+  $('.project .title').each(function(i, elem) {
+      thesisTitles += ($(elem).text()).trim() + '\n';
+  });
+
+  fs.writeFileSync('data/thesisTitles.txt', thesisTitles);
 
 I noticed that the only tag that the address is in is <td> so I used cheerio to find all the <td>s.
 
