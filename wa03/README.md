@@ -1,6 +1,6 @@
 **Code for weekly assignment 3 for data structures taken at Parsons School of Design**
 
-I started this assignment by following the start code, included below, and changing certain aspects to get and print out only the aspects I wanted from the API.
+I started this assignment by following the starter code, included below, and changing certain aspects to get and print out only the aspects I wanted from the API.
 
     "use strict"
 
