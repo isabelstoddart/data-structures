@@ -60,6 +60,6 @@ The second thing I changed was the API query. I changed it to only get the infor
     
 I tried to get my formatting the closest to the example format as possible. To achieve this, I had to create a nested object with the overall address object and an inner latlong object.
 I created this object and then had to get the information I wanted from the API to fill the object. Each API request returns an object, so to get the address I went to the InputAddress key in the API request object which was an object itself, so then I went to the StreetAddress key in the InputAddress object and got the actual street address.
-To get the latitude and longitude, I went to the OutputGeocodes key in the API request object which was an object itself with another object called OutputGeocode within it. Within the Output geocode object, I found the latitude and longitude key and set latitude and longitude to those values.
+To get the latitude and longitude, I went to the OutputGeocodes key in the API request object which was an object itself with another object called OutputGeocode within it. Within the OutputGeocode object, I found the latitude and longitude key and set latitude and longitude to those values.
 
 And then I had the output format I wanted and created a JSON of these addresses.
