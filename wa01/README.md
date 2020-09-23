@@ -1,9 +1,11 @@
-**Code for weekly assignment 1 for data structures taken at Parsons School of Design** 
+# Weekly assignment 1
+### For data structures at Parsons School of Design
 
 This code reads in provided urls and prints them out into text files. 
 
-For this assignment, I started by using this sample code, included below, to take in each url and print them out into a text file:
+For this assignment, I started by using this sample code, included below, to take in each url and print them out into a text file
 
+## Starter Code
     var request = require('request');
     var fs = require('fs');
 
@@ -14,6 +16,7 @@ For this assignment, I started by using this sample code, included below, to tak
         else {console.log("Request failed!")}
     });
 
+## Process
 I decided I wanted to challenge myself and use a loop to save all of the url files. 
 
 I ran into some trouble here trying to figure out how to print each url file to a separate text file while using a loop. I tried using “/home/ec2-user/environment/AAMeetings/“ + (the number of the url) + “.text” inside a loop to get the files to print to a new text file every time but this didn’t work. They were still printed to the same file every loop iteration and only the last file in the loop showed up. 
