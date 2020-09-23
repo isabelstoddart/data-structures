@@ -1,5 +1,5 @@
 # Weekly assignment 2
-### for data structures at Parsons School of Design
+### For data structures at Parsons School of Design
 
 I started this assignment by following the starter code, included below, and applying it to the html file I was scraping.
 
