@@ -1,7 +1,9 @@
-**Code for weekly assignment 3 for data structures taken at Parsons School of Design**
+# Weekly assignment 3 
+### For data structures at Parsons School of Design
 
 I started this assignment by following the starter code, included below, and changing certain aspects to get and print out only the aspects I wanted from the API.
 
+## Starter Code
     "use strict"
 
     // dependencies
@@ -49,7 +51,8 @@ I started this assignment by following the starter code, included below, and cha
         console.log('*** *** *** *** ***');
         console.log(`Number of meetings in this zone: ${meetingsData.length}`);
     });
-  
+
+## Process
 There were two things I needed to change in the starter code. First, I changed the addresses the API read in. I read in my file of addresses from assignment 2 and set addresses equal to this list. Then, I parsed the addresses to put them back in their original array format. Then, I had my array of addresses.
 
 The second thing I changed was the API query. I changed it to only get the information I wanted from the API (address, latitude, longitude) and put them into objects like the format listed below.
