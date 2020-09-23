@@ -59,8 +59,6 @@ And then I had just the address. Overall, I used cheerio to get the html code af
 
 Then I printed out all the addresses to a text file using the format used in the starter code, included below.
 
-**Starter Code Format**
-
     // write the project titles to a text file
     var thesisTitles = ''; // this variable will hold the lines of text
 
