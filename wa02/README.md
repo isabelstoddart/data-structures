@@ -1,7 +1,8 @@
-#Code for weekly assignment 2 for data structures taken at Parsons School of Design
+# Code for weekly assignment 2 for data structures taken at Parsons School of Design
 
 I started this assignment by following the starter code, included below, and applying it to the html file I was scraping.
 
+## Starter Code
     // npm install cheerio
 
     var fs = require('fs');
@@ -28,6 +29,7 @@ I started this assignment by following the starter code, included below, and app
 
     fs.writeFileSync('data/thesisTitles.txt', thesisTitles);
 
+## Process 
 I noticed that the only tag that the address is in is td so I used cheerio to find all the tds.
 
 Then I noticed that every address was under where the style = "border-bottom:1px solid #e3e3e3; width:260px”
@@ -56,6 +58,7 @@ And then I had just the address. Overall, I used cheerio to get the html code af
 
 Then I printed out all the addresses to a text file using the format used in the starter code, included below.
 
+## Start Code Format
     // write the project titles to a text file
     var thesisTitles = ''; // this variable will hold the lines of text
 
