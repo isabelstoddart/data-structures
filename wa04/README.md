@@ -2,7 +2,7 @@
 ### For data structures at Parsons School of Design
 
 ## Part One
-Part one of this assignment was to make a data model of the AA Meetings data.I decided to make a normalized data model because I noticed that some of the building addresses are the same for multiple meetings, so I thought having a normalized data model (with multiple tables) would make distinguishing between the different meetings with the same address easier. 
+Part one of this assignment was to make a data model of the AA Meetings data. I decided to make a normalized data model because I noticed that some of the building addresses are the same for multiple meetings, so I thought having a normalized data model (with multiple tables) would make distinguishing between the different meetings with the same address easier. 
 
 I made an ERD (Entity Relationship Diagram) using Lucidchart shown below:
 
