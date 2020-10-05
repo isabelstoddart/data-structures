@@ -19,7 +19,7 @@ I made Addresses and Times into separate datasets from the main data set (Meetin
 Part two of this assignment was to create a database for AA Meetings and then to create a table. I started with the starter code shown below:
 
     const { Client } = require('pg');
-      const dotenv = require('dotenv');
+    const dotenv = require('dotenv');
     dotenv.config();  
 
     // AWS RDS POSTGRESQL INSTANCE
