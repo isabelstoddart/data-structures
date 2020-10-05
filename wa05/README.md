@@ -6,45 +6,46 @@ Part one of this assignment was to make a data model of the Process Blog data. I
 
 The variables included in each blog entry object are shown below:
 
-![](processBlogPlan.png)
+![](ProcessBlogPlan.png)
 
-The datasets included are:
-Addresses (Address Id PK, Address Street Info, Latitude, Longitude, City, State, Zipcode, Borough, Zone),
-Meetings (Meeting ID PK, Meeting Type, Meeting Address FK, Meeting Room, Meeting Time FK, Special Interest, Wheelchair Access),
-Times (Time ID PK, Day of Week, Start Time, End Time)
+The vaiables included are:
 
-I made Addresses and Times into separate datasets from the main data set (Meetings) because there can be multiple meetings with the same address and time and it would be redundant to repeat these in the main dataset.
+stressLevel(number), date(date), workedOut(boolean), happy(boolean), assignments(string), assignCmplt(boolean), hoursOfSleep(number), numOfCoff(number)
+
+I made stress level the partition key so that I can find entries by how stressed I was that day. I made the sorting key the date time. 
 
 ## Part Two
-Part two of this assignment was to create a database for AA Meetings and then to create a table. I started with the starter code shown below:
+Part two of the assignment was to create "Items" for DynamoDB and to store them in an array named blogEntries. I started with the starter code shown below:
 
-    const { Client } = require('pg');
-    const dotenv = require('dotenv');
-    dotenv.config();  
+    var blogEntries = [];
 
-    // AWS RDS POSTGRESQL INSTANCE
-    var db_credentials = new Object();
-    db_credentials.user = 'aaron';
-    db_credentials.host = 'dsdemo.c2g7qw1juwkg.us-east-1.rds.amazonaws.com';
-    db_credentials.database = 'mydb';
-    db_credentials.password = process.env.AWSRDS_PW;
-    db_credentials.port = 5432;
+    class BlogEntry {
+    constructor(primaryKey, date, entry, happy, iate) {
+        this.pk = {};
+        this.pk.N = primaryKey.toString();
+        this.date = {}; 
+        this.date.S = new Date(date).toDateString();
+        this.entry = {};
+        this.entry.S = entry;
+        this.happy = {};
+        this.happy.BOOL = happy; 
+        if (iate != null) {
+        this.iate = {};
+        this.iate.SS = iate; 
+        }
+        this.month = {};
+        this.month.N = new Date(date).getMonth().toString();
+        }
+    }
 
-    // Connect to the AWS RDS Postgres database
-    const client = new Client(db_credentials);
-    client.connect();
+    blogEntries.push(new BlogEntry(0, 'August 28 2019', "Yay, first day of class!", true, ["Cheez-Its", "M&Ms"]));
+    blogEntries.push(new BlogEntry(1, 'October 31, 2015', "I piloted my first solo flight!", true, ["pancakes"]));
+    blogEntries.push(new BlogEntry(2, 8675309, "867-5309?", false));
+    blogEntries.push(new BlogEntry(3, 'September 25, 2019', "I taught my favorite students.", true, ["peas", "carrots"]));
 
-    // Sample SQL statement to create a table: 
-    var thisQuery = "CREATE TABLE aalocations (address varchar(100), lat double precision, long double precision);";
-    // Sample SQL statement to delete a table: 
-    // var thisQuery = "DROP TABLE aalocations;"; 
-
-    client.query(thisQuery, (err, res) => {
-        console.log(err, res);
-        client.end();
-    });
-    
- The only thing I changed in the starter code was the information for the RDS PostgreSQL instance to match my information.
+    console.log(blogEntries);
+ 
+ I changed the starter code to include my vairables for the BlogEntry object.
  
  ## Part Three
  Part three of this assignment was to populate the database. I started with the starter code shown below:
