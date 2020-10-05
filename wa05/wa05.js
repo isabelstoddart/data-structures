@@ -1,3 +1,5 @@
+var async = require('async'); 
+
 var blogEntries = [];
 
 class BlogEntry {
@@ -40,12 +42,13 @@ var dynamodb = new AWS.DynamoDB();
 
 var params = {};
 
-for(let i=0; i < blogEntries.length; i++){
-  params.Item = blogEntries[i]; 
-  params.TableName = "processblog";
+async.eachSeries(blogEntries, function(value, callback) {
+   params.Item = blogEntries[blogEntries.indexOf(value)]; 
+   params.TableName = "processblog";
 
-  dynamodb.putItem(params, function (err, data) {
-    if (err) console.log(err, err.stack); // an error occurred
-    else     console.log(data);           // successful response
-  });
-}
+    dynamodb.putItem(params, function (err, data) {
+      if (err) console.log(err, err.stack); // an error occurred
+      else     console.log(data);           // successful response
+    });
+    setTimeout(callback, 1000); 
+}); 
