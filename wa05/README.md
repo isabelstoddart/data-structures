@@ -65,6 +65,6 @@ Part two of the assignment was to create "Items" for DynamoDB and to store them 
         else     console.log(data);           // successful response
     });
    
-I added a loop to add all of my blog entries and making sure not to attempt more than 2 puts per second.
+I added a loop to add all of my blog entries instead of just the one and made sure not to attempt more than 2 puts per second.
 
 Finally, I checked my items DynamoDB and all four were there.
