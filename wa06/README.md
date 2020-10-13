@@ -76,7 +76,11 @@ Part two of the assignment was to write and execute a query for the progress blo
         }
     });
  
- For this query I wanted to see 
+After looking at the starter code and how a query for NoSQL is constructed, I started to think about how I wanted to query my progress blogb data. I picked stress level as my primary key because I wanted to get the data out of the table by how stressed I was on that day. For my query, I decided to look at days where I was at a stress level of 2. I sorted by including all dates through September to November because I wanted to see all of my data for now and I didn't want to hone in on any dates at the moment. I think looking at stress level will be really helpful as I make more queries because I can look at each stress level group and see if there is any correlation between hours slept, assigments due, and amount of coffee drank. 
+
+My query is below:
+
+
  
  ## Part Three
  Part three of this assignment was to populate the database. I started with the starter code shown below:
