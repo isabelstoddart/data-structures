@@ -80,26 +80,20 @@ After looking at the starter code and how a query for NoSQL is constructed, I st
 
 My query is below:
 
+    var params = {
+        TableName : "processblog",
+        KeyConditionExpression: "#stresslevel = :stress and #dt between :minTime and :maxTime", // the query expression
+        ExpressionAttributeNames: { // name substitution, used for reserved words in DynamoDB
+            "#stresslevel" : "PK",
+            "#dt" : "SK"
+        },
+        ExpressionAttributeValues: { // the query values
+            ":stress": {N: "2"},
+            ":minTime" : {N: new Date('September 1, 2020 1:00:00').getTime().toString()},
+            ":maxTime" : {N: new Date('November 30, 2020 23:00:00').getTime().toString()}
+        }
+    };
+    
+The results of this query are below:
 
- 
- ## Part Three
- Part three of this assignment was to populate the database. I started with the starter code shown below:
- 
-    var AWS = require('aws-sdk');
-    AWS.config = new AWS.Config();
-    AWS.config.region = "us-east-1";
-
-    var dynamodb = new AWS.DynamoDB();
-
-    var params = {};
-    params.Item = blogEntries[0]; 
-    params.TableName = "processblog";
-
-    dynamodb.putItem(params, function (err, data) {
-        if (err) console.log(err, err.stack); // an error occurred
-        else     console.log(data);           // successful response
-    });
-   
-I added a loop to add all of my blog entries, instead of just the one, and made sure not to attempt more than 2 puts per second.
-
-Finally, I checked my items on DynamoDB and all four were there.
+![](nosqlQuery.png)
