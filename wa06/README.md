@@ -2,9 +2,7 @@
 ### For data structures at Parsons School of Design
 
 ## Part One
-Part one of this assignment was to write and execute a query for the AA data. 
-
-For this assignment I started with the starter code shown below:
+Part one of this assignment was to write and execute a query for the AA data. I started with the starter code shown below:
 
     const { Client } = require('pg');
     const cTable = require('console.table');
@@ -32,52 +30,53 @@ For this assignment I started with the starter code shown below:
         }
     });
     
-After looking at the starter code and how a query for SQL is constructed, I satrted to think about what I wanted my query to do. Going off of my plan for the AA data I decided I wanted to query all of the unique addresses in the data. I did this because for my AA data plan I want to have a seperate table with just the unique addresses that can map back to the meeting data.
+After looking at the starter code and how a query for SQL is constructed, I started to think about what I wanted my query to do. Going off of my plan for the AA data I decided I wanted to query all of the unique addresses in the data. I did this because for my AA data plan I want to have a seperate table with just the unique addresses that can map back to the meeting data.
 To do this I wrote the query below:
 
-        var thisQuery = "SELECT lat,long,address FROM aalocations GROUP BY lat,long,address;";
+    var thisQuery = "SELECT lat,long,address FROM aalocations GROUP BY lat,long,address;";
         
    
 In this query I selected the latitude, longitude, and address from the aa locations data and grouped them by latitude, longitude, and addresses. This got only the unique sets of latitude, longtitude, and address. For my query I did not include a WHERE clause because I wanted all of the address data. I did not want to hone in on just one type of address so a WHERE clause was not necessary.
 
 The results of the query are below:
 
-
-
-
+![](sqlQuery.png)
 
 ## Part Two
-Part two of the assignment was to create "Items" for DynamoDB and to store them in an array named blogEntries. I started with the starter code shown below:
+Part two of the assignment was to write and execute a query for the progress blog data. I started with the starter code shown below:
 
-    var blogEntries = [];
+    // npm install aws-sdk
+    var AWS = require('aws-sdk');
+    AWS.config = new AWS.Config();
+    AWS.config.region = "us-east-1";
 
-    class BlogEntry {
-    constructor(primaryKey, date, entry, happy, iate) {
-        this.pk = {};
-        this.pk.N = primaryKey.toString();
-        this.date = {}; 
-        this.date.S = new Date(date).toDateString();
-        this.entry = {};
-        this.entry.S = entry;
-        this.happy = {};
-        this.happy.BOOL = happy; 
-        if (iate != null) {
-        this.iate = {};
-        this.iate.SS = iate; 
+    var dynamodb = new AWS.DynamoDB();
+
+    var params = {
+        TableName : "aaronprocessblog",
+        KeyConditionExpression: "#tp = :topicName and dt between :minDate and :maxDate", // the query expression
+        ExpressionAttributeNames: { // name substitution, used for reserved words in DynamoDB
+            "#tp" : "topic"
+        },
+        ExpressionAttributeValues: { // the query values
+            ":topicName": {S: "work"},
+            ":minDate": {N: new Date("August 28, 2020").valueOf().toString()},
+            ":maxDate": {N: new Date("December 11, 2020").valueOf().toString()}
         }
-        this.month = {};
-        this.month.N = new Date(date).getMonth().toString();
+    };
+
+    dynamodb.query(params, function(err, data) {
+        if (err) {
+            console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
+        } else {
+            console.log("Query succeeded.");
+            data.Items.forEach(function(item) {
+                console.log("***** ***** ***** ***** ***** \n", item);
+            });
         }
-    }
-
-    blogEntries.push(new BlogEntry(0, 'August 28 2019', "Yay, first day of class!", true, ["Cheez-Its", "M&Ms"]));
-    blogEntries.push(new BlogEntry(1, 'October 31, 2015', "I piloted my first solo flight!", true, ["pancakes"]));
-    blogEntries.push(new BlogEntry(2, 8675309, "867-5309?", false));
-    blogEntries.push(new BlogEntry(3, 'September 25, 2019', "I taught my favorite students.", true, ["peas", "carrots"]));
-
-    console.log(blogEntries);
+    });
  
- I changed the starter code to include my variables for the BlogEntry object.
+ For this query I wanted to see 
  
  ## Part Three
  Part three of this assignment was to populate the database. I started with the starter code shown below:
