@@ -35,6 +35,15 @@ For this assignment I started with the starter code shown below:
 After looking at the starter code and how a query for SQL is constructed, I satrted to think about what I wanted my query to do. Going off of my plan for the AA data I decided I wanted to query all of the unique addresses in the data. I did this because for my AA data plan I want to have a seperate table with just the unique addresses that can map back to the meeting data.
 To do this I wrote the query below:
 
+        var thisQuery = "SELECT lat,long,address FROM aalocations GROUP BY lat,long,address;";
+        
+   
+In this query I selected the latitude, longitude, and address from the aa locations data and grouped them by latitude, longitude, and addresses. This got only the unique sets of latitude, longtitude, and address. For my query I did not include a WHERE clause because I wanted all of the address data. I did not want to hone in on just one type of address so a WHERE clause was not necessary.
+
+The results of the query are below:
+
+
+
 
 
 ## Part Two
