@@ -3,7 +3,7 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 
 // load the thesis text file into a variable, `content`
-var content = fs.readFileSync('AAMeetings/m4.txt');
+var content = fs.readFileSync('../wa01/m4.txt');
 
 // load `content` into a cheerio object
 var $ = cheerio.load(content);
@@ -17,4 +17,4 @@ $('td').each(function(i, elem) {
     }
 });
 
-fs.writeFileSync('AAMeetings/AAMeetingsAddresses.txt', AAMeetingsAddresses)
+fs.writeFileSync('../wa02/AAMeetingsAddresses.txt', AAMeetingsAddresses)

@@ -6,6 +6,7 @@ const fs = require('fs'),
       request = require('request'),
       async = require('async'),
       dotenv = require('dotenv');
+      dotenv.config({path: '/home/ec2-user/environment/data-structures/.env'});
 
 // TAMU api key
 dotenv.config();
@@ -14,7 +15,7 @@ const API_URL = 'https://geoservices.tamu.edu/Services/Geocode/WebService/Geocod
 
 // geocode addresses
 let meetingsData = [];
-let addresses = fs.readFileSync('/home/ec2-user/environment/AAMeetings/AAMeetingsAddresses.JSON');
+let addresses = fs.readFileSync('../wa02/AAMeetingsAddresses.JSON');
 //puts JSON file back in its original array format
 addresses = JSON.parse(addresses)
 
@@ -57,7 +58,7 @@ async.eachSeries(addresses, function(value, callback) {
     //sleep for a couple seconds before making the next request
     setTimeout(callback, 2000);
 }, function() {
-    fs.writeFileSync('AAMeetings/AAaddressesObj.json', JSON.stringify(meetingsData));
+    fs.writeFileSync('../wa03/AAaddressesObj.json', JSON.stringify(meetingsData));
     console.log('*** *** *** *** ***');
     console.log(`Number of meetings in this zone: ${meetingsData.length}`);
 });

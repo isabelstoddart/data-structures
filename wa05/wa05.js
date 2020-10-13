@@ -27,10 +27,16 @@ class BlogEntry {
   }
 }
 
-blogEntries.push(new BlogEntry(4, 'September 29, 2020 3:15:00', true, true, ["Work on Project for Major Studio 1"], true, 7, 1));
-blogEntries.push(new BlogEntry(6, 'September 30, 2020 5:15:00', false, true, ["Finish Project for Major Studio 1"], true, 5, 2));
+blogEntries.push(new BlogEntry(4, 'September 29, 2020 15:15:00', true, true, ["Work on project for Major Studio 1"], true, 7, 1));
+blogEntries.push(new BlogEntry(6, 'September 30, 2020 20:15:00', false, true, ["Finish project for Major Studio 1"], true, 5, 2));
 blogEntries.push(new BlogEntry(2, 'October 2, 2020 9:00:00',true, true, ["Read for Data Visulaization and Information Aesthetics","Work on Data Structures assignment 5"], true, 9, 0));
-blogEntries.push(new BlogEntry(4, 'October 4, 2020 11:29:00', true, true, ["Work on Data Structures assignment 5", "Read for Data Structures"], true, 9, 0));
+blogEntries.push(new BlogEntry(4, 'October 4, 2020 23:29:00', true, true, ["Work on Data Structures assignment 5", "Read for Data Structures"], true, 9, 0));
+blogEntries.push(new BlogEntry(2, 'October 5, 2020 20:15:00', false, true, ["Work on revising project for Major Studio 1"], false, 8, 0));
+blogEntries.push(new BlogEntry(3, 'October 6, 2020 14:30:00', false, true, ["Work on revising project for Major Studio 1"], true, 9, 1));
+blogEntries.push(new BlogEntry(2, 'October 7, 2020 10:00:00',false, true, ["Read for Data Structures"], true, 6, 1));
+blogEntries.push(new BlogEntry(1, 'October 8, 2020 11:30:00', true, true, ["Work on Data Structures assignment 6", "Read for Data Visulaization and Information Aesthetics"], true, 10, 1));
+blogEntries.push(new BlogEntry(2, 'October 12, 2020 20:00:00',false, true, ["Finish assignment for Data Visualization and Information Aesthetics"], true, 8, 1));
+blogEntries.push(new BlogEntry(1, 'October 13, 2020 17:30:00', false, true, ["Submit Data Structures assignment 6", "Read for Data Structures"], true, 6, 0));
 
 console.log(blogEntries);
 
