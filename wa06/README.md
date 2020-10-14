@@ -35,7 +35,7 @@ To do this I wrote the query below:
 
     var thisQuery = "SELECT lat,long,address FROM aalocations GROUP BY lat,long,address;";
     
-**Edit** This query gets the same result in a slightly more efficient way. It shows that there are multiple ways to get the same result.
+**Edit** This query gets the same result in a slightly more efficient way. It shows that there are always multiple ways to get the same result.
 
     var thisQuery = "SELECT DISTINCT lat, long, address FROM aalocations;";
            
