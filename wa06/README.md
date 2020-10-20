@@ -34,8 +34,11 @@ After looking at the starter code and how a query for SQL is constructed, I star
 To do this I wrote the query below:
 
     var thisQuery = "SELECT lat,long,address FROM aalocations GROUP BY lat,long,address;";
-        
-   
+    
+**Edit** This query gets the same result in a slightly more efficient way. It shows that there are always multiple ways to get the same result.
+
+    var thisQuery = "SELECT DISTINCT lat, long, address FROM aalocations;";
+           
 In this query I selected the latitude, longitude, and address from the aa locations data and grouped them by latitude, longitude, and addresses. This got only the unique sets of latitude, longtitude, and address. For my query I did not include a WHERE clause because I wanted all of the address data. I did not want to hone in on just one type of address so a WHERE clause was not necessary.
 
 The results of the query are below:
