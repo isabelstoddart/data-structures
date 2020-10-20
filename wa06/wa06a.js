@@ -16,7 +16,8 @@ const client = new Client(db_credentials);
 client.connect();
 
 // Sample SQL statement to query meetings on Monday that start on or after 7:00pm: 
-var thisQuery = "SELECT lat,long,address FROM aalocations GROUP BY lat,long,address;";
+//var thisQuery = "SELECT lat,long,address FROM aalocations GROUP BY lat,long,address;";
+var thisQuery = "SELECT DISTINCT lat, long, address FROM aalocations;";
 
 client.query(thisQuery, (err, res) => {
     if (err) {throw err}
