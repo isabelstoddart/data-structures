@@ -2,7 +2,7 @@
 ### For data structures at Parsons School of Design
 
 ## Process
-The purpose of this assignment was to finish parsing and cleaning the rest of the data in all zones, and update/replace the PostgreSQL table with the new data.
+The purpose of this assignment was to finish parsing and cleaning the rest of the data in all zones, and to update/replace the PostgreSQL table with the new data.
 
 ### Parsing the Data
 For this assignment I worked with Amina Brown and James Troxel. We started with parsing the rest the html files to get out the data we wanted. We ended up parsing the floor info, group name, details, if there is wheelchair access, day, start time, end time, special interest, zip, address, building, and meeting type for each meeting. I was in charge of parsing the day, start time, end time, meeting type, and special interest of each meeting in each location. To do this I created a loop that went through each location and got the information for each individual meeting within that location. I then created an array for each location of an array of objects with all the individual meeting data. This allowed for each set of meetings to be mapped back to the correct location. The code used is included below:
