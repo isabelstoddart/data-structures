@@ -1,4 +1,4 @@
-# Weekly Assignment 6
+# Weekly Assignment 7
 ### For data structures at Parsons School of Design
 
 ## Process
