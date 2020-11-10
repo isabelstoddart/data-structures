@@ -13,7 +13,7 @@ The lat and long will need to be mapped to each dot on the map. The day, type, a
 
 ## Process Blog
 
-![](process.jps)
+![](process.jpg)
 
 ## Sensors
 
