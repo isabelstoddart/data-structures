@@ -18,7 +18,7 @@ client.connect();
 // Sample SQL statements for checking your work: 
 var thisQuery = "SELECT * FROM sensorData;"; // print all values
 var secondQuery = "SELECT COUNT (*) FROM sensorData;"; // print the number of rows
-var thirdQuery = "SELECT sensorValue, COUNT (*) FROM sensorData GROUP BY sensorValue;"; // print the number of rows for each sensorValue
+var thirdQuery = "SELECT temp, COUNT (*) FROM sensorData GROUP BY temp;"; // print the number of rows for each sensorValue
 
 client.query(thisQuery, (err, res) => {
     if (err) {throw err}
