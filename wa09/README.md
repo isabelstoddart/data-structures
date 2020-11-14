@@ -1,10 +1,15 @@
 # Weekly Assignment 9
 ### For data structures at Parsons School of Design
+
+## Temperature Sensor Code
+
+I have included the code I am flashing to the temperature sensor in dht-test.ino. 
+
 ## Setup Part One
 
-I decided to use a PostgreSQL table for my sensor data. For this assignment, I am using my sensor to track the temperature and humidity in my bathroom that I share with my brother (I got his permission to put the sensor in the bathroom before starting this assignment). I am hoping this data will track when the shower is on and when the hairdryer is being used and will possibly show other patterns of bathroom use between a 19 year old and 24 year old (male and female). 
+I decided to use a PostgreSQL table for my sensor data. For this assignment, I am using my sensor to track the temperature and humidity in my bathroom that I share with my brother (I got his permission to put the sensor in the bathroom before starting this assignment). I am hoping this data will track when the shower is on and when the hairdryer is being used and will possibly show other patterns of bathroom use of a 19 year old and 24 year old (male and female). 
 
-For part one of the setup, I copied the starter code to create my table in PostgreSQL. This code can be found in wa09a.js. I have attached the starter code below:
+For part one of the setup, I copied the starter code to create my table in PostgreSQL. I changed the starter code to include my database credentials. I also changed the CREATE TABLE statement to include 3 variables: temp, humidity, and sensorTime. This code can be found in wa09a.js. I have attached the starter code below:
 
     const { Client } = require('pg');
 
@@ -27,8 +32,6 @@ For part one of the setup, I copied the starter code to create my table in Postg
         console.log(err, res);
         client.end();
     });
-    
-### NOTE: Currently the table only includes the temperature data. I couldn't figure out how to include the humidity variable I made in the API. I am hoping to add this in after getting help.
 
 ## Setup Part Two
 
@@ -42,7 +45,9 @@ For part three of the setup I installed and initialized pm2
 
 The main part of this assignment is to write a script to make a request to the Partile API URL to parse the result of the API request and insert the appropraite data into the database. 
 
-I used the starter code to complete this main part. This code can be found under wa09worker.js. I have attached the start code below:
+I used the starter code to complete this main part. I made quite a few changes to the starter code. I changed the starter code to include my database credentials. I changed the particle variable to be sensor_data, the variable I am pulling in from the API. I then created two new variables (tempF and humidity) because sensor_data is a string that contains the temperature and humidity I want to put into the table. I parsed the string and pulled out just the temperature value and the humidity value and then changed the INSERT INTO query statement to insert the temperature and humidity into my table. 
+
+This code can be found under wa09worker.js. I have attached the starter code below:
 
     var request = require('request');
     const { Client } = require('pg');
@@ -90,7 +95,7 @@ I used the starter code to complete this main part. This code can be found under
     
 I then modified the ecosystem.config.js file with my variables and used PM2 to run the code.
 
-I then checked my work using the starter code given and found that everything was working correctly. This code can be found under wa09check.js. I have included this starter code below:
+I then checked my work using the starter code given. After changing the database credentials and the third query to select tempF and humidity instead of sensorValue I found that everything was working correctly. This code can be found under wa09check.js. I have included this starter code below:
 
     const { Client } = require('pg');
     const cTable = require('console.table');
