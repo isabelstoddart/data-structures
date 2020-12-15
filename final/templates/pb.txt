@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Isabel's Process Blog</title>
+  <meta name="description" content="Isabel's Process Blog">
+  <meta name="author" content="Isabel Stoddart">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<script>
+var data = {{{pbdata}}} ; 
+
+d3.select("#mySlider").on("change", function(d){
+        selectedValue = this.value;
+        console.log(selectedValue)
+        update(selectedValue)
+    })
+
+var myTable = '<table><thead><tr><th>Stress Level</th><th>Date</th><th>Assignments</th><th>Assignments Completed?</th><th>Cups of Coffee Drank</th><th>Happy?</th><th>Hours Slept Last Night</th><th>Worked Out?</th></tr></thead><tbody>';
+
+for (var i=0; i < data.length; i++) {
+	myTable += '<tr>';
+	myTable += '<td>' + data[i].PK.N + '</td>';
+	myTable += '<td>' + data[i].date.S + '</td>';
+	myTable += '<td>' + data[i].assignments.SS + '</td>';
+	myTable += '<td>' + data[i].assignComplt.BOOL + '</td>';
+	myTable += '<td>' + data[i].numOfCoff.N + '</td>';
+	myTable += '<td>' + data[i].happy.BOOL + '</td>';
+	myTable += '<td>' + data[i].hoursOfSleep.N + '</td>';
+	myTable += '<td>' + data[i].workedOut.BOOL + '</td>';
+	myTable += '</tr>';
+
+}
+
+myTable += '</body></table>'
+
+$(window).on('load', function() {
+  $("#myEntries").html(myTable)
+});
+
+</script>
+
+<h3>The Many Stresses of a Grad Student</h3>
+
+<div class="container">
+    <p>Stress Level</p>
+    <input type="range" name="mySlider" id=mySlider min="1" max="10" value="1">
+</div>
+
+<div id='myEntries'></div>
+
+</body>
+</html>

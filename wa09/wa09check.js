@@ -16,9 +16,9 @@ const client = new Client(db_credentials);
 client.connect();
 
 // Sample SQL statements for checking your work: 
-var thisQuery = "SELECT * FROM sensorData;"; // print all values
-var secondQuery = "SELECT COUNT (*) FROM sensorData;"; // print the number of rows
-var thirdQuery = "SELECT temp, COUNT (*) FROM sensorData GROUP BY temp;"; // print the number of rows for each sensorValue
+var thisQuery = "SELECT sensorTime, humidity FROM sensorData WHERE humidity > 30;"; // print all values
+//var secondQuery = "SELECT COUNT (*) FROM sensorData;"; // print the number of rows
+//var thirdQuery = "SELECT humidity, COUNT (*) FROM sensorData GROUP BY humidity;"; // print the number of rows for each sensorValue
 
 client.query(thisQuery, (err, res) => {
     if (err) {throw err}
@@ -27,17 +27,17 @@ client.query(thisQuery, (err, res) => {
     }
 });
 
-client.query(secondQuery, (err, res) => {
-    if (err) {throw err}
-    else {
-    console.table(res.rows);
-    }
-});
+// client.query(secondQuery, (err, res) => {
+//     if (err) {throw err}
+//     else {
+//     console.table(res.rows);
+//     }
+// });
 
-client.query(thirdQuery, (err, res) => {
-    if (err) {throw err}
-    else {
-    console.table(res.rows);
-    }
-    client.end();
-});
+// client.query(thirdQuery, (err, res) => {
+//     if (err) {throw err}
+//     else {
+//     console.table(res.rows);
+//     }
+//     client.end();
+// });

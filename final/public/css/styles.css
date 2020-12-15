@@ -1,0 +1,93 @@
+#mapid { height: 760px; }
+
+.leaflet-popup-content{
+  font-family: Arial;
+  font-size: 12px;
+}
+
+@font-face{
+    src: url(leafy.otf);
+    font-family: Leafy;
+   }  
+   
+   
+.container{
+  display: inline;
+}
+   
+   
+body {
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #FAFAEC;
+}
+
+
+div{
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#myEntries{
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: Leafy;
+  font-size: 25px;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+h3, p {
+    font-family: Leafy;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 50px;
+}
+
+h3{
+  margin-top:12px;
+}
+
+p {
+  font-size:17px;
+  margin-top: -20px;
+  margin-bottom:2px;
+}
+
+td {
+  border-top:0pt none;
+  margin-top:0pt;
+  padding-bottom:5px;
+  padding-left:12px;
+  padding-right:12px;
+  padding-top:5px;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.blinking{
+    animation:blinkingText 1.5s linear infinite;
+}
+@keyframes blinkingText{
+  50% {
+    opacity: 0;
+  }
+}
