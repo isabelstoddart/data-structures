@@ -4,7 +4,7 @@ Weekly Assignments that contributed to this project: [Weekly Assignment 1](https
 ### Mockup
 ![](AA.jpg)
 ### Current State
-![](stateAA.png)
+![](statusAA.png)
 
 The AA map currently defaults to meetings on Fridays after 5 PM. The tooltip popup includes the name of the group, the address, the start time, the end time, and the day.
 
