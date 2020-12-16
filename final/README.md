@@ -19,4 +19,13 @@ Weekly Assignments that contributed to this project: [Weekly Assignment 5](https
 ### Mockup
 ![](process.jpg)
 ### Current State
-![](stateProgress.jpg)
+![](stateProgress.png)
+
+My progress blog currently involves a table that can be sorted by stress level using the url. 
+
+### Next Steps:
+* Make the scroll work so the user can pick the stress level
+* Add emoticons to the visualization like in the mockup
+
+## Final Assignment 3: Temperature Sensor
+Weekly Assignments that contributed to this project:
