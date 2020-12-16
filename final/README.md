@@ -17,4 +17,6 @@ The AA map currently defaults to meetings on Fridays after 5 PM. The tooltip pop
 ## Final Assignment 2: Progress Blog
 Weekly Assignments that contributed to this project: [Weekly Assignment 5](https://github.com/isabelstoddart/data-structures/tree/master/wa05), [Weekly Assignment 6](https://github.com/isabelstoddart/data-structures/tree/master/wa05), [Weekly Assignment 10](https://github.com/isabelstoddart/data-structures/tree/master/wa10)
 ### Mockup
-![](
+![](process.jpg)
+### Current State
+![](stateProgress.jpg)
