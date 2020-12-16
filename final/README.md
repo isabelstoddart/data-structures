@@ -28,4 +28,4 @@ My progress blog currently involves a table that can be sorted by stress level u
 * Add emoticons to the visualization like in the mockup
 
 ## Final Assignment 3: Temperature Sensor
-Weekly Assignments that contributed to this project:
+Weekly Assignments that contributed to this project: [Weekly Assignment 9](https://github.com/isabelstoddart/data-structures/tree/master/wa09), [Weekly Assignment 10](https://github.com/isabelstoddart/data-structures/tree/master/wa10)
