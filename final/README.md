@@ -32,4 +32,11 @@ Weekly Assignments that contributed to this project: [Weekly Assignment 9](https
 ### Mockup
 ![](temp.jpg)
 ### Current State
+![](stateHumid.png)
 
+The current state of my humidity sensor visualization shows a line graph with the humidity of the past 48 hours split up and aggregated by hour. The line in the middle of the line graph is the average humidity per hour and the top of the range of the line is the max with the bottom of the range being the minimum. I decided to use this format to show the max, average, and minimum temperature so it was clear how high the humidity goes when someone is in the shower, which I didn't think was obvious with just the average. 
+
+### Next Steps
+* Clean up the design, add a title to the visualization and a description
+* Add more descriptive labels to the axis of the graph
+* Possibly add a tooltip to the graph so the user can follow the exact humidity as they go through the line graph
