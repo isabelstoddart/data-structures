@@ -38,5 +38,5 @@ The current state of my humidity sensor visualization shows a line graph with th
 
 ### Next Steps
 * Clean up the design, add a title to the visualization and a description
-* Add more descriptive labels to the axis of the graph
+* Add more descriptive labels to the axes of the graph
 * Possibly add a tooltip to the graph so the user can follow the exact humidity as they go through the line graph
