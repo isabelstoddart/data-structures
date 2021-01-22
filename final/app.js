@@ -140,7 +140,7 @@ app.get('/temperature', function(req, res) {
              MIN(humidity::int) as min,
              MAX(humidity::int) as max
              FROM sensorData
-             WHERE ((humidity < 120) AND sensorTime >= NOW() - '48 hour'::INTERVAL)
+             WHERE ((humidity < 120) AND sensorTime >= NOW() - '24 hour'::INTERVAL)
              GROUP BY sensorhour
              ORDER BY sensorhour;`;
 

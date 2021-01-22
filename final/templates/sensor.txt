@@ -12,6 +12,7 @@ body {
 .axis line {
   fill: none;
   stroke: #000;
+  shape-rendering: crispEdges;
 }
 
 .x.axis path {
@@ -59,7 +60,7 @@ svg.append("g")
       .attr("x",0 - (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
-      .text("Humidity");
+      .text("Humidity (%)");
     
     
 // Show confidence interval
